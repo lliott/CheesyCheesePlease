@@ -5,11 +5,15 @@ using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
+    [Header("Database")]
     [SerializeField] private PassengerDatabase passengerDatabase;
     [SerializeField] private PassengerInfoController passengerInfoController;
     [SerializeField] private Button nextPassengerButton;
     [SerializeField] private int totalPassengersPerRound = 10;
     [SerializeField] private int totalRounds = 1;
+
+    [Header("Température")]
+    [SerializeField] private Temperature _temperatureScript;
 
     private List<PassengerData> passengersToDisplay;
     private int currentPassengerIndex = 0;
@@ -59,6 +63,9 @@ public class RoundManager : MonoBehaviour
     void ShowNextPassenger()
     {
         Debug.Log("Showing next passenger");
+
+        //Générer une nouvelle température (gift) par nv pers
+        _temperatureScript.GenerateResults();
 
         if (currentPassengerIndex < passengersToDisplay.Count)
         {

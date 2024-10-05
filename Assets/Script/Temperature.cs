@@ -15,8 +15,11 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     public float remainingTime;
     private bool _displaying = false;
 
+    //Random
+    private int chance;
     private int randomDegree;
-    private bool available = true;
+
+    private bool available = true; //Passenger valide
 
     void Start(){
         ResetThermometer();
@@ -39,10 +42,16 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         _degreeTxt.text = null;
     }
 
+    //Appelée au début de chaque round
+    public void GenerateResults(){
+        chance = Random.Range(1,11); //11 exclut 
+        randomDegree = Random.Range(25,50);
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         _displaying = true;
-        int chance = Random.Range(1,11); //11 exclut 
+        
         if(chance<=2){                   // = 2/10 chances
             _screen.color = Color.red;
             available = false;
@@ -51,7 +60,6 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         }
 
         //Print a randomDegree
-        randomDegree = Random.Range(25,50);
         UpdateUI();
 
         // if(le randomDegree est un degree parmis le tableau des interdits){
