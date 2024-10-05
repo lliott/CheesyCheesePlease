@@ -10,29 +10,27 @@ public class TerroristInfoController : MonoBehaviour
     [SerializeField] private TMP_Text txtName;
     [SerializeField] private TMP_Text txtEnum;
     [SerializeField] private PassengerDatabase passengerDatabase;
-    private int index;
+    private List<PassengerData> terroristList = new List <PassengerData>();
+    private int indexTerrorist;
 
-    void Update()
+    void Start ()
     {
-        if (passengerDatabase != null && index >= 0 && index < passengerDatabase.datas.Count)
+        for (int i = 0; i < passengerDatabase.datas.Count; i++)
         {
-            PassengerData data = passengerDatabase.datas[index];
+            PassengerData data = passengerDatabase.datas[i];
 
-            // Check if the passenger's type is Terrorist
             if (data != null && data.passengerType == PassengerType.Terrorist)
             {
+                Debug.Log("BBBBBBBBH");
                 imgPhoto.sprite = data.passportSettings.photo;
                 txtName.text = data.name;
                 txtEnum.text = data.passengerType.ToString();
+                terroristList.Add(data);
             }
-        }
-        else
-        {
-            Debug.Log($"Index out of range: {index}, Passenger Database Count: {passengerDatabase.datas.Count}");
         }
     }
 
-    public void UpdatePassengerInfo(PassengerData data)
+    public void UpdateTerroristInfo(PassengerData data)
     {
         if (data != null && data.passengerType == PassengerType.Terrorist)
         {
@@ -48,8 +46,32 @@ public class TerroristInfoController : MonoBehaviour
         }
     }
 
-    public void SetIndex(int nextIndex)
+    public void Next()
     {
-        index = nextIndex;
+        if (indexTerrorist < terroristList.Count - 1)
+        {
+            indexTerrorist++;
+
+        } else {
+
+            indexTerrorist = 0;
+        }
+
+        UpdateTerroristInfo(terroristList[indexTerrorist]);
     }
+
+    public void Previous()
+    {
+        if (indexTerrorist == 0)
+        {
+            indexTerrorist = terroristList.Count - 1;
+
+        } else { 
+
+            indexTerrorist--;
+        }
+
+        UpdateTerroristInfo(terroristList[indexTerrorist]);
+    }
+
 }
