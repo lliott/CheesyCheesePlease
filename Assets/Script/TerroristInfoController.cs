@@ -78,6 +78,7 @@ public class TerroristInfoController : MonoBehaviour
     //A appeler ds la verif finale à la fin de chq round
     public bool isTerrorist(){
         PassengerData currentPassenger = RoundManager.instance.currentPassenger;
+        Debug.Log("name :" + currentPassenger.name);
         if(currentPassenger.passengerType == PassengerType.Terrorist){
             return true;
         }

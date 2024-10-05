@@ -79,8 +79,9 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Showing next passenger");
 
-        //Générer une nouvelle température (gift) par nv pers
-        _temperatureScript.GenerateResults();
+        //Reset game
+        PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
+        _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
 
         if (currentPassengerIndex < passengersToDisplay.Count)
         {

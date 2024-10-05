@@ -20,9 +20,13 @@ public class FinalChecking : MonoBehaviour
     private void Check(){
         if(_terroristInfoController.isTerrorist()){
             Debug.Log("est terroriste");
+        }else{
+            Debug.Log("pas terroriste");
         }
         if(!_temperatureScript.isTemperatureCorrect()){
             Debug.Log("mauvaise température");
+        }else{
+            Debug.Log("good température");
         }
     }
 }

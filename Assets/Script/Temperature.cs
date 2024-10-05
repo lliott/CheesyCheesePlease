@@ -44,7 +44,15 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
     //Appelée au début de chaque round
     public void GenerateResults(){
+        //Reset available à chq round
+        ResetThermometer();
+        available = true; 
+
+        //Generate new temperature
         chance = Random.Range(1,11); //11 exclut 
+        if(chance<=2){                   // = 2/10 chances
+            available = false;
+        }
         randomDegree = Random.Range(25,50);
     }
 
@@ -52,9 +60,8 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     {
         _displaying = true;
         
-        if(chance<=2){                   // = 2/10 chances
+        if(!available){
             _screen.color = Color.red;
-            available = false;
         } else{
             _screen.color = Color.green;
         }
