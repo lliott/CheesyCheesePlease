@@ -8,7 +8,7 @@ public class PassengerData
 {
     public string name;
     public PassportSettings passportSettings;
-    public Sprite Skin;
-    public float temperature; 
+    public Sprite skin;
+    public Sprite gift; 
     //autres datas par passenger
 }

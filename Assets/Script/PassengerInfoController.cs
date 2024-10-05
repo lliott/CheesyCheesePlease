@@ -9,6 +9,7 @@ public class PassengerInfoController : MonoBehaviour
     [SerializeField] private Text _txtName;
     [SerializeField] private Text _txtCaption; 
     [SerializeField] private Image _imgSkin;
+    [SerializeField] private Image _imgGift;
 
     //Index
     [SerializeField] private int index;
@@ -28,7 +29,10 @@ public class PassengerInfoController : MonoBehaviour
                 _imgPhoto.sprite = data.passportSettings.photo;
                 _txtName.text = data.name;
                 _txtCaption.text = data.passportSettings.caption;
-                _imgSkin.sprite = data.Skin;
+                if (_imgSkin != null)
+                {
+                _imgSkin.sprite = data.skin;}
+                _imgGift.sprite = data.gift;
             }
         }
         else
@@ -42,7 +46,7 @@ public class PassengerInfoController : MonoBehaviour
         _imgPhoto.sprite = data.passportSettings.photo;
         _txtName.text = data.name;
         _txtCaption.text = data.passportSettings.caption;
-        _imgSkin.sprite = data.Skin;
+        _imgSkin.sprite = data.skin;
     }
 
     public void SetIndex(int nexIndex)
