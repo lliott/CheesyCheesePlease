@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
+    public static RoundManager instance; //Singleton
+
     [Header("Database")]
     [SerializeField] private PassengerDatabase passengerDatabase;
     [SerializeField] private PassengerInfoController passengerInfoController;
+
+    public PassengerData currentPassenger;
+    
+    //
     [SerializeField] private Button nextPassengerButton;
     [SerializeField] private int totalPassengersPerRound = 10;
     [SerializeField] private int totalRounds = 1;
@@ -21,6 +27,15 @@ public class RoundManager : MonoBehaviour
 
     void Start()
     {
+        if (instance != null) 
+        { 
+            Destroy(instance); 
+        } 
+        else 
+        { 
+            instance = this; 
+        } 
+
         nextPassengerButton.onClick.AddListener(ShowNextPassenger);
         StartNewRound();
     }
@@ -69,7 +84,7 @@ public class RoundManager : MonoBehaviour
 
         if (currentPassengerIndex < passengersToDisplay.Count)
         {
-            PassengerData currentPassenger = passengersToDisplay[currentPassengerIndex];
+            currentPassenger = passengersToDisplay[currentPassengerIndex];
             passengerInfoController.UpdatePassengerInfo(currentPassenger);
             passengerInfoController.SetIndex(currentPassengerIndex);
             currentPassengerIndex++;
@@ -85,7 +100,6 @@ public class RoundManager : MonoBehaviour
             {
                 Debug.Log("All rounds completed!");
                 Debug.Log("FINITO");
-
             }
         }
     }

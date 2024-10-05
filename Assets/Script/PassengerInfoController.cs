@@ -47,9 +47,9 @@ public class PassengerInfoController : MonoBehaviour
         _imgSkin.sprite = data.skin;
     }
 
-    public void SetIndex(int nexIndex)
+    public void SetIndex(int nextIndex)
     {
-        index = nexIndex;
+        index = nextIndex;
     }
 
     public void IncrementIndex()
