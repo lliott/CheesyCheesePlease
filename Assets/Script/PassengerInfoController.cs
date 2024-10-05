@@ -29,9 +29,7 @@ public class PassengerInfoController : MonoBehaviour
                 _imgPhoto.sprite = data.passportSettings.photo;
                 _txtName.text = data.name;
                 _txtCaption.text = data.passportSettings.caption;
-                if (_imgSkin != null)
-                {
-                _imgSkin.sprite = data.skin;}
+                _imgSkin.sprite = data.skin;
                 _imgGift.sprite = data.gift;
             }
         }

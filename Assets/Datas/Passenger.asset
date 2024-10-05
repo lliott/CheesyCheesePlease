@@ -17,35 +17,41 @@ MonoBehaviour:
     passportSettings:
       photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
       caption: gfzezfzfzf
-    Skin: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    gift: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     passengerType: 0
   - name: Tourist2
     passportSettings:
       photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
       caption: yfeuuz
-    Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 0}
+    gift: {fileID: 0}
     passengerType: 0
   - name: Terrorist1
     passportSettings:
       photo: {fileID: 0}
       caption: 
-    Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 0}
+    gift: {fileID: 0}
     passengerType: 1
   - name: Terrorist2
     passportSettings:
       photo: {fileID: 0}
       caption: 
-    Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 0}
+    gift: {fileID: 0}
     passengerType: 1
   - name: Tourist3
     passportSettings:
       photo: {fileID: 0}
       caption: 
-    Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 0}
+    gift: {fileID: 0}
     passengerType: 0
   - name: Terrorist3
     passportSettings:
       photo: {fileID: 0}
       caption: 
-    Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    skin: {fileID: 0}
+    gift: {fileID: 0}
     passengerType: 1
