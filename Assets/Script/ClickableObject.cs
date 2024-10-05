@@ -1,28 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ClickableObject : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject objectToDisplay;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        objectToDisplay.SetActive(false); 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-       Debug.Log("objet cliqué");
-       objectToDisplay.SetActive(true);
+        if (!objectToDisplay.activeSelf)
+        {
+            objectToDisplay.SetActive(true);
+        }
     }
 }
