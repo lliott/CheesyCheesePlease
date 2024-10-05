@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class PassengerData 
+
+public class PassengerData
 {
     public string name;
     public PassportSettings passportSettings;
-    public Sprite skin;
-    public Sprite gift; 
-    //autres datas par passenger
+    public Sprite Skin;
+    public PassengerType passengerType;
 }

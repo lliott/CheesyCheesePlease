@@ -37,7 +37,7 @@ public class PassengerInfoController : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Index out of range: {index}, Passenger Database Count: {_passengerDatabase.datas.Count}");
+            Debug.Log($"Index out of range: {index}, Passenger Database Count: {_passengerDatabase.datas.Count}");
         }
     }
 
