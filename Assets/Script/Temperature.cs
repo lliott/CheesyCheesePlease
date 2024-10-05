@@ -9,6 +9,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     //UI
     [SerializeField] private Image _screen;
     [SerializeField] private Text _degreeTxt;
+    [SerializeField] private Text _txtInterdictions;
 
     //Timer 
     [SerializeField] private float _displayTime = 2;
@@ -22,6 +23,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     private bool available = true; //Passenger valide
 
     void Start(){
+        DisplayInterdictions() ;
         ResetThermometer();
     }
 
@@ -63,15 +65,36 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         if(!available){
             _screen.color = Color.red;
         } else{
-            _screen.color = Color.green;
+            _screen.color = Color.green; 
+            available = GetInterdictions();
         }
 
         //Print a randomDegree
         UpdateUI();
+    }
 
-        // if(le randomDegree est un degree parmis le tableau des interdits){
-        //     available = false;
-        // }
+    private bool GetInterdictions(){
+        if(randomDegree==45){
+            Debug.Log("interdit"+randomDegree);
+            return false;
+        } else if(randomDegree==26){
+            Debug.Log("interdit"+randomDegree);
+            return false;
+        }else if(randomDegree==42){
+            Debug.Log("interdit"+randomDegree);
+            return false;
+        }else if(randomDegree==47){
+            Debug.Log("interdit"+randomDegree);
+            return false;
+        }else if(randomDegree > 28 && randomDegree< 32){
+            Debug.Log("interdit entre 28 et 32 exclus "+ randomDegree);
+            return false;
+        }
+        return true;
+    }
+
+    private void DisplayInterdictions(){
+        _txtInterdictions.text="45,26,42,47, 28<x<32";
     }
 
     private void UpdateUI(){
