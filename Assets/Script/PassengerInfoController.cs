@@ -7,13 +7,15 @@ public class PassengerInfoController : MonoBehaviour
 {
     [SerializeField] private Image _imgPhoto;
     [SerializeField] private Text _txtName;
-    [SerializeField] private Text _txtCaption; // TMP_Text
+    [SerializeField] private Text _txtCaption; 
+    [SerializeField] private Image _imgSkin;
+
+    //Index
     [SerializeField] private int index;
 
     //Database
     [SerializeField] private PassengerDatabase _passengerDatabase;
 
-    // Update is called once per frame
     void Update()
     {
         // Ensure the index is within the valid range before accessing the list
@@ -26,6 +28,7 @@ public class PassengerInfoController : MonoBehaviour
                 _imgPhoto.sprite = data.passportSettings.photo;
                 _txtName.text = data.name;
                 _txtCaption.text = data.passportSettings.caption;
+                _imgSkin.sprite = data.Skin;
             }
         }
         else
@@ -39,6 +42,7 @@ public class PassengerInfoController : MonoBehaviour
         _imgPhoto.sprite = data.passportSettings.photo;
         _txtName.text = data.name;
         _txtCaption.text = data.passportSettings.caption;
+        _imgSkin.sprite = data.Skin;
     }
 
     public void SetIndex(int nexIndex)
