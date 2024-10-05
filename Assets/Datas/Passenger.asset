@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Passenger
   m_EditorClassIdentifier: 
   datas:
-  - name: fzfzfzf
+  - name: Tourist1
     passportSettings:
       photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
       caption: gfzezfzfzf
     Skin: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     passengerType: 0
-  - name: hfhf
+  - name: Terrorist1
     passportSettings:
       photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
       caption: yfeuuz
     Skin: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    passengerType: 0
-  - name: 
+    passengerType: 1
+  - name: Tourist2
     passportSettings:
       photo: {fileID: 0}
       caption: 
