@@ -94,7 +94,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     private void DisplayInterdictions(){
-        _txtInterdictions.text="45,26,42,47, 28<x<32";
+        _txtInterdictions.text=" Registre des interdictions de températures \n 45,26,42,47, 28<x<32";
     }
 
     private void UpdateUI(){

@@ -36,7 +36,7 @@ public class RoundManager : MonoBehaviour
             instance = this; 
         } 
 
-        nextPassengerButton.onClick.AddListener(ShowNextPassenger);
+        //nextPassengerButton.onClick.AddListener(ShowNextPassenger);
         StartNewRound();
     }
 
@@ -75,7 +75,7 @@ public class RoundManager : MonoBehaviour
         return passengers;
     }
 
-    void ShowNextPassenger()
+    public void ShowNextPassenger()
     {
         Debug.Log("Showing next passenger");
 
