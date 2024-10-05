@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91485b9415bdd7541ac7d1a98984dd5b, type: 3}
+  m_Name: Passenger
+  m_EditorClassIdentifier: 
+  datas:
+  - name: Tourist1
+    passportSettings:
+      photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      caption: gfzezfzfzf
+    skin: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+    gift: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    passengerType: 0
+  - name: Tourist2
+    passportSettings:
+      photo: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+      caption: yfeuuz
+    skin: {fileID: 0}
+    gift: {fileID: 0}
+    passengerType: 0
+  - name: Terrorist1
+    passportSettings:
+      photo: {fileID: 0}
+      caption: 
+    skin: {fileID: 0}
+    gift: {fileID: 0}
+    passengerType: 1
+  - name: Terrorist2
+    passportSettings:
+      photo: {fileID: 0}
+      caption: 
+    skin: {fileID: 0}
+    gift: {fileID: 0}
+    passengerType: 1
+  - name: Tourist3
+    passportSettings:
+      photo: {fileID: 0}
+      caption: 
+    skin: {fileID: 0}
+    gift: {fileID: 0}
+    passengerType: 0
+  - name: Terrorist3
+    passportSettings:
+      photo: {fileID: 0}
+      caption: 
+    skin: {fileID: 0}
+    gift: {fileID: 0}
+    passengerType: 1
