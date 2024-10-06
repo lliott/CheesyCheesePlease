@@ -4,17 +4,19 @@ using UnityEngine.EventSystems;
 
 public class Cordes : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerExitHandler
 {
-    [SerializeField] private RectTransform ropeTransform;  
     [SerializeField] private float pullThreshold = -50f;   // Seuil 
     [SerializeField] private float reboundDistance = 10f;  
     [SerializeField] private float reboundDuration = 0.2f; 
+    [SerializeField] private float resetDuration = 0.5f;
     [SerializeField] private bool accept;
+    private RectTransform ropeTransform;  
     private Vector2 startPosition;                         
     private bool isTriggered = false;                     
     private bool hasRebounded = false;                     
 
     void Start()
     {
+        ropeTransform = GetComponent<RectTransform>();
         startPosition = ropeTransform.anchoredPosition;
     }
 
@@ -96,5 +98,29 @@ public class Cordes : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerEx
         } else{
             FinalChecking.instance.Refuse();
         }
+    }
+
+    public void ResetRope()
+    {
+        StartCoroutine(ResetRopeCoroutine());
+    }
+
+    private IEnumerator ResetRopeCoroutine()
+    {
+        Vector2 targetPosition = startPosition; 
+        float elapsedTime = 0f;
+
+        while (elapsedTime < resetDuration) 
+        {
+            elapsedTime += Time.deltaTime;
+            ropeTransform.anchoredPosition = Vector2.Lerp(ropeTransform.anchoredPosition, targetPosition, elapsedTime / resetDuration);
+            yield return null;
+        }
+
+        ropeTransform.anchoredPosition = targetPosition;
+
+        //Reinit values
+        isTriggered = false;
+        hasRebounded = false;
     }
 }

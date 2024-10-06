@@ -6,12 +6,14 @@ using UnityEngine.EventSystems;
 
 public class Temperature : MonoBehaviour, IPointerClickHandler
 {
-    //UI
+    [Header("UI")]
     [SerializeField] private Image _screen;
     [SerializeField] private Text _degreeTxt;
     [SerializeField] private Text _txtInterdictions;
+    [SerializeField] private Sprite _redScreen;
+    [SerializeField] private Sprite _greenScreen;
 
-    //Timer 
+    [Header("Timer")]
     [SerializeField] private float _displayTime = 2;
     public float remainingTime;
     private bool _isDisplaying = false;
@@ -40,7 +42,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     private void ResetThermometer(){
         _isDisplaying = false ;
         remainingTime = _displayTime;
-        _screen.color = Color.white;
+        _screen.gameObject.SetActive(false);
         _degreeTxt.text = null;
     }
 
@@ -64,11 +66,12 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
         //Print a randomDegree
         UpdateUI();
-
+        
+        _screen.gameObject.SetActive(true);
         if(!available){
-            _screen.color = Color.red;
+            _screen.sprite = _redScreen;
         } else{
-            _screen.color = Color.green; 
+            _screen.sprite = _greenScreen;
             available = GetInterdictions();
         }
 
