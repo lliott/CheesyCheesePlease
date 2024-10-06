@@ -6,6 +6,7 @@ public class FinalChecking : MonoBehaviour
 {
     [SerializeField] private TerroristInfoController _terroristInfoController;
     [SerializeField] private Temperature _temperatureScript;
+    [SerializeField] private Offrandes _offrandesScript;
 
     //Accepter passenger
     public void Accept(){
@@ -32,12 +33,20 @@ public class FinalChecking : MonoBehaviour
             result = false ;
         }else{
             Debug.Log("good température");
+        } 
+        if(!_offrandesScript.isOffrandeCorrect()){
+            Debug.Log("offrande interdite");
+            result = false ;
+        }else{
+            Debug.Log("good offrande");
         }
         
         if(result == response){
             Debug.Log("Gagné pr ce rat");
+            Results.instance.success++;
         } else{
             Debug.Log("Perdu");
+            Results.instance.fails++;
         }
 
     }

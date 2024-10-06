@@ -14,7 +14,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     //Timer 
     [SerializeField] private float _displayTime = 2;
     public float remainingTime;
-    private bool _displaying = false;
+    private bool _isDisplaying = false;
 
     //Random
     private int chance;
@@ -28,7 +28,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     public void Update(){
-        if(_displaying){
+        if(_isDisplaying){
             if(remainingTime>0){
                 remainingTime -= Time.deltaTime;
             } else{
@@ -38,7 +38,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     private void ResetThermometer(){
-        _displaying = false ;
+        _isDisplaying = false ;
         remainingTime = _displayTime;
         _screen.color = Color.white;
         _degreeTxt.text = null;
@@ -59,9 +59,12 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnPointerClick(PointerEventData eventData)
-    {
-        _displaying = true;
-        
+    { 
+        _isDisplaying = true;
+
+        //Print a randomDegree
+        UpdateUI();
+
         if(!available){
             _screen.color = Color.red;
         } else{
@@ -69,32 +72,18 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
             available = GetInterdictions();
         }
 
-        //Print a randomDegree
-        UpdateUI();
     }
 
     private bool GetInterdictions(){
-        if(randomDegree==45){
+        if(randomDegree==28 || randomDegree==41 || randomDegree==35 || randomDegree==47 ){
             Debug.Log("interdit"+randomDegree);
-            return false;
-        } else if(randomDegree==26){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree==42){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree==47){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree > 28 && randomDegree< 32){
-            Debug.Log("interdit entre 28 et 32 exclus "+ randomDegree);
             return false;
         }
         return true;
     }
 
     private void DisplayInterdictions(){
-        _txtInterdictions.text=" Registre des interdictions de températures \n 45,26,42,47, 28<x<32";
+        _txtInterdictions.text=" Registre des interdictions de températures \n 28, 41,35,47";
     }
 
     private void UpdateUI(){

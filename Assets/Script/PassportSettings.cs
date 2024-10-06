@@ -7,5 +7,7 @@ using System;
 public class PassportSettings
 {
     public Sprite photo;
-    public string caption;
+    public string species;
+    public string pelage;
+    public string birth;
 }

@@ -11,12 +11,14 @@ public class PassengerInfoController : MonoBehaviour
     [SerializeField] private Text _txtCaption; 
     [SerializeField] private Image _imgSkin;
     [SerializeField] private Image _imgGift;
+    [SerializeField] private Text _textDialogue;
 
     //Index
     [SerializeField] private int index;
 
-    //Database
+    //Database && Script
     [SerializeField] private PassengerDatabase _passengerDatabase;
+    [SerializeField] private Offrandes _offrandesScript;
 
     void Start(){
          if (instance != null) 
@@ -27,15 +29,18 @@ public class PassengerInfoController : MonoBehaviour
         { 
             instance = this; 
         } 
+
+        _imgGift.gameObject.SetActive(false);
     }
 
     //Appelé dans RoundManager
     public void UpdatePassengerInfo(PassengerData data)
     {
         _imgPhoto.sprite = data.passportSettings.photo;
-        _txtName.text = data.name;
-        _txtCaption.text = data.passportSettings.caption;
+        _txtName.text = "Name : " + data.name;
+        _txtCaption.text = "Species : " + data.passportSettings.species + "\nCoat : " + data.passportSettings.pelage +"\nBirth : " + data.passportSettings.birth; // a completer et modif
         _imgSkin.sprite = data.skin;
+        _textDialogue.text = data.dialogue;
     }
 
     public void SetIndex(int nextIndex)
@@ -53,5 +58,11 @@ public class PassengerInfoController : MonoBehaviour
         {
             Debug.Log("can't increment further");
         }
+    }
+
+//Si dialogue déclenché > give gift
+    public void GiveGift(){
+        _imgGift.gameObject.SetActive(true);
+        _imgGift.sprite = _offrandesScript.UpdateGiftImage(RoundManager.instance.currentPassenger.gift);
     }
 }

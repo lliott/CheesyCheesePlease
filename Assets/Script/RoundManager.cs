@@ -22,11 +22,14 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private int totalPassengersPerRound = 10;
     [SerializeField] private int totalRounds = 1;
 
-    [Header("Température")]
+    [Header("Scripts")]
     [SerializeField] private Temperature _temperatureScript;
+    [SerializeField] private Offrandes _offrandesScript;
 
-    [Header("Passport settings")]
+    [Header("Passenger Stuff")]
     [SerializeField] GameObject passport;
+    [SerializeField] GameObject offrande;
+    [SerializeField] GameObject dialogue;
 
     [Header("Passenger Image Settings")]
     [SerializeField] private Image passengerImage;
@@ -94,6 +97,11 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Showing next passenger");
 
+        //Reset game
+        PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
+        _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
+        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
+
         if (currentPassengerIndex < passengersToDisplay.Count)
         {
             StartCoroutine(TransitionToNextPassenger());
@@ -109,6 +117,7 @@ public class RoundManager : MonoBehaviour
             {
                 Debug.Log("All rounds completed!");
                 Debug.Log("FINITO");
+                Results.instance.ConcludeGame();
             }
         }
     }
@@ -132,7 +141,7 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator HidePassengerImageWithFade()
     {
-        DeactivatePassport();
+        DeactivateStuff();
 
         Vector3 currentPosition = passengerImage.transform.localPosition;
         Vector3 targetPosition = originalPosition;
@@ -192,9 +201,11 @@ public class RoundManager : MonoBehaviour
         passport.SetActive(true);
     }
 
-    private void DeactivatePassport()
+    private void DeactivateStuff()
     {
         passport.SetActive(false);
+        offrande.SetActive(false);
+        dialogue.SetActive(false);
     }
 
 
