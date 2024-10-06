@@ -25,6 +25,7 @@ public class RoundManager : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
+    [SerializeField] private List<Cordes> _ropesList= new List<Cordes>();
 
     [Header("Passenger Stuff")]
     [SerializeField] GameObject passport;
@@ -43,7 +44,6 @@ public class RoundManager : MonoBehaviour
 
     void Start()
     {
-        // Initialize singleton instance
         if (instance != null)
         {
             Destroy(instance);
@@ -102,6 +102,9 @@ public class RoundManager : MonoBehaviour
         PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
         _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
         _offrandesScript.GenerateForbiddenGift(); //Generate new gift
+        foreach(var rope in  _ropesList){
+            rope.Invoke("ResetRope",1f); //reset l etat des cordes
+        }
 
         if (currentPassengerIndex < passengersToDisplay.Count)
         {
