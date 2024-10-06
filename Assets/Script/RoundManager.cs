@@ -147,6 +147,7 @@ public class RoundManager : MonoBehaviour
 
         Vector3 currentPosition = passengerImage.transform.localPosition;
         Vector3 targetPosition = originalPosition;
+        Vector3 targetPositionAccepted = originalPosition + (imageOffset * 2);
 
         Color currentColor = passengerImage.color;
         Color targetColor = Color.black;
@@ -158,7 +159,15 @@ public class RoundManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / fadeDuration);
 
-            passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, t);
+            if (!isAccepted)
+            {
+                passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, t);
+
+            } else {
+
+                passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPositionAccepted, t);
+            }
+
 
             passengerImage.color = Color.Lerp(currentColor, targetColor, t);
 
