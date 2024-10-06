@@ -21,6 +21,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     //Random
     private int chance;
     private int randomDegree;
+    [SerializeField] private List<int> randomInterdictions=new List<int>();
 
     private bool available = true; //Passenger valide
 
@@ -57,7 +58,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         if(chance<=2){                   // = 2/10 chances
             available = false;
         }
-        randomDegree = Random.Range(25,50);
+        randomDegree = Random.Range(5,81);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -77,16 +78,55 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
     }
 
+    public void GetFourRandomInterdictions(){
+        for (int i = 0; i < 4; i++){
+            GenerateRandomInterdictions();
+        }
+    }
+    public void GenerateRandomInterdictions(){
+        int a;
+        bool firstRange = Random.value < 0.5f; // 50% chance pr chq plage de valeurs
+
+        if (firstRange)
+        {
+            a = Random.Range(5, 25);      
+        }
+        else
+        {
+            a = Random.Range(51, 81);
+        }
+        
+        //Check si y a pas de doublons
+        if(randomInterdictions.Count != 0){  
+            foreach(var randomInterdiction in randomInterdictions){
+                    if ( a == randomInterdiction){
+                        Debug.Log("Recalcule");
+                        GenerateRandomInterdictions();
+                        return;
+                    }
+                }
+        }
+        randomInterdictions.Add(a); 
+    }
+
     private bool GetInterdictions(){
-        if(randomDegree==28 || randomDegree==41 || randomDegree==35 || randomDegree==47 ){
-            Debug.Log("interdit"+randomDegree);
-            return false;
+        if(randomDegree>=25 && randomDegree <= 50){
+            return true;
+        }
+        foreach(var value in randomInterdictions){
+            if(randomDegree == value ){
+                Debug.Log("interdit"+randomDegree);
+                return false;
+            }
         }
         return true;
     }
 
     private void DisplayInterdictions(){
-        _txtInterdictions.text=" Registre des interdictions de températures \n 28, 41,35,47";
+        _txtInterdictions.text ="Interdictions de températures\n";
+        foreach(var value in randomInterdictions){
+            _txtInterdictions.text += value + "°C\n";
+        }
     }
 
     private void UpdateUI(){

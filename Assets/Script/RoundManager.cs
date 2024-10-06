@@ -57,6 +57,8 @@ public class RoundManager : MonoBehaviour
         originalColor = passengerImage.color;
 
         StartNewRound();
+        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
+        _temperatureScript.GetFourRandomInterdictions(); //Generate new interdictions
     }
 
     void StartNewRound()
@@ -101,7 +103,6 @@ public class RoundManager : MonoBehaviour
         //Reset game
         PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
         _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
-        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
         foreach(var rope in  _ropesList){
             rope.Invoke("ResetRope",1f); //reset l etat des cordes
         }
