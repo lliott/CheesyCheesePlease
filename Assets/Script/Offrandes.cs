@@ -45,17 +45,6 @@ public class Offrandes : MonoBehaviour
         }
         return true;
     }
-
-
-    void Start()
-    {
-    }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
 }
 
 
