@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class FinalChecking : MonoBehaviour
 {
+    public static FinalChecking instance; 
     [SerializeField] private TerroristInfoController _terroristInfoController;
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
+
+    void Start(){
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     //Accepter passenger
     public void Accept(){

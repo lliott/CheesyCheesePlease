@@ -42,7 +42,6 @@ public class RoundManager : MonoBehaviour
 
     void Start()
     {
-        // Initialize singleton instance
         if (instance != null)
         {
             Destroy(instance);
