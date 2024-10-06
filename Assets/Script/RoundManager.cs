@@ -5,15 +5,19 @@ using UnityEngine.UI;
 
 public class RoundManager : MonoBehaviour
 {
-    public static RoundManager instance; //Singleton
+    public static RoundManager instance; // Singleton
 
     [Header("Database")]
     [SerializeField] private PassengerDatabase passengerDatabase;
     [SerializeField] private PassengerInfoController passengerInfoController;
 
+    [Header("Passenger & Round settings")]
     public PassengerData currentPassenger;
-    
-    //
+
+    private List<PassengerData> passengersToDisplay;
+    private int currentPassengerIndex = 0;
+    private int currentRound = 1;
+
     [SerializeField] private Button nextPassengerButton;
     [SerializeField] private int totalPassengersPerRound = 10;
     [SerializeField] private int totalRounds = 1;
@@ -21,22 +25,36 @@ public class RoundManager : MonoBehaviour
     [Header("Température")]
     [SerializeField] private Temperature _temperatureScript;
 
-    private List<PassengerData> passengersToDisplay;
-    private int currentPassengerIndex = 0;
-    private int currentRound = 1;
+    [Header("Passport settings")]
+    [SerializeField] private GameObject passportPrefab;
+    private GameObject spawnedPassportPrefab;
+    [SerializeField] private Transform spawnPosition;
+    [SerializeField] private Quaternion spawnRotation;
+
+    [Header("Passenger Image Settings")]
+    [SerializeField] private Image passengerImage;
+    [SerializeField] private Vector3 imageOffset = new Vector3(20f, 0f, 0f);
+    [SerializeField] private float fadeDuration = 2.0f;
+    [SerializeField] private float delayBeforeFade = 0.5f;
+
+    private Vector3 originalPosition;
+    private Color originalColor;
 
     void Start()
     {
-        if (instance != null) 
-        { 
-            Destroy(instance); 
-        } 
-        else 
-        { 
-            instance = this; 
-        } 
+        // Initialize singleton instance
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
 
-        //nextPassengerButton.onClick.AddListener(ShowNextPassenger);
+        originalPosition = passengerImage.transform.localPosition;
+        originalColor = passengerImage.color;
+
         StartNewRound();
     }
 
@@ -53,7 +71,7 @@ public class RoundManager : MonoBehaviour
         List<PassengerData> passengers = new List<PassengerData>();
         List<PassengerData> availablePassengers = new List<PassengerData>(passengerDatabase.datas);
 
-        // each passenger is chosen once
+        // Each passenger is chosen once
         passengers.AddRange(availablePassengers);
         int remainingPassengers = totalPassengersPerRound - availablePassengers.Count;
 
@@ -63,7 +81,7 @@ public class RoundManager : MonoBehaviour
             passengers.Add(availablePassengers[randomIndex]);
         }
 
-        // shuffle
+        // Shuffle
         for (int i = 0; i < passengers.Count; i++)
         {
             PassengerData temp = passengers[i];
@@ -79,16 +97,9 @@ public class RoundManager : MonoBehaviour
     {
         Debug.Log("Showing next passenger");
 
-        //Reset game
-        PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
-        _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
-
         if (currentPassengerIndex < passengersToDisplay.Count)
         {
-            currentPassenger = passengersToDisplay[currentPassengerIndex];
-            passengerInfoController.UpdatePassengerInfo(currentPassenger);
-            passengerInfoController.SetIndex(currentPassengerIndex);
-            currentPassengerIndex++;
+            StartCoroutine(TransitionToNextPassenger());
         }
         else
         {
@@ -103,5 +114,76 @@ public class RoundManager : MonoBehaviour
                 Debug.Log("FINITO");
             }
         }
+    }
+
+    private IEnumerator TransitionToNextPassenger()
+    {
+        if (currentPassengerIndex > 0)
+        {
+            yield return StartCoroutine(HidePassengerImageWithFade());
+        }
+
+        currentPassenger = passengersToDisplay[currentPassengerIndex];
+        passengerInfoController.UpdatePassengerInfo(currentPassenger);
+        passengerInfoController.SetIndex(currentPassengerIndex);
+
+        yield return StartCoroutine(ShowPassengerImageWithFade());
+
+        currentPassengerIndex++;
+    }
+
+    private IEnumerator HidePassengerImageWithFade()
+    {
+        Vector3 currentPosition = passengerImage.transform.localPosition;
+        Vector3 targetPosition = originalPosition;
+
+        Color currentColor = passengerImage.color;
+        Color targetColor = Color.black;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / fadeDuration);
+
+            passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, t);
+
+            passengerImage.color = Color.Lerp(currentColor, targetColor, t);
+
+            yield return null;
+        }
+
+        passengerImage.transform.localPosition = targetPosition;
+        passengerImage.color = targetColor;
+    }
+
+    private IEnumerator ShowPassengerImageWithFade()
+    {
+        passengerImage.transform.localPosition = originalPosition;
+
+        Vector3 initialPosition = originalPosition;
+        Vector3 targetPosition = initialPosition + imageOffset;
+
+        passengerImage.color = Color.black;
+
+        yield return new WaitForSeconds(delayBeforeFade);
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / fadeDuration);
+
+            passengerImage.transform.localPosition = Vector3.Lerp(initialPosition, targetPosition, t);
+
+            passengerImage.color = Color.Lerp(Color.black, originalColor, t);
+
+            yield return null;
+        }
+
+        passengerImage.transform.localPosition = targetPosition;
+        passengerImage.color = originalColor;
     }
 }
