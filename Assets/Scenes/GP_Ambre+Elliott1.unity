@@ -1118,8 +1118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136.22662, y: 112.89616}
-  m_SizeDelta: {x: 240.4532, y: 32.5677}
+  m_AnchoredPosition: {x: 124.08, y: 112.89616}
+  m_SizeDelta: {x: 264.74, y: 32.5677}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346692289
 MonoBehaviour:
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 27
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 79
@@ -2431,8 +2431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163.49396, y: 44.09134}
-  m_SizeDelta: {x: 189.0121, y: 170.1826}
+  m_AnchoredPosition: {x: -153.18622, y: -1.1041}
+  m_SizeDelta: {x: 249.2727, y: 260.5735}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107928076
 MonoBehaviour:
@@ -3456,7 +3456,9 @@ MonoBehaviour:
     name: 
     passportSettings:
       photo: {fileID: 0}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 0}
     gift: 0
     passengerType: 0
@@ -4252,8 +4254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -113.9516}
-  m_SizeDelta: {x: 538.3015, y: 98.4709}
+  m_AnchoredPosition: {x: 130.43237, y: -46.554916}
+  m_SizeDelta: {x: 277.4368, y: 233.2643}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000313793
 MonoBehaviour:
@@ -4282,7 +4284,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 79
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

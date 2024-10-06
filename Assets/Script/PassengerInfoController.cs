@@ -37,8 +37,8 @@ public class PassengerInfoController : MonoBehaviour
     public void UpdatePassengerInfo(PassengerData data)
     {
         _imgPhoto.sprite = data.passportSettings.photo;
-        _txtName.text = data.name;
-        _txtCaption.text = data.passportSettings.caption;
+        _txtName.text = "Name : " + data.name;
+        _txtCaption.text = "Species : " + data.passportSettings.species + "\nCoat : " + data.passportSettings.pelage +"\nBirth : " + data.passportSettings.birth; // a completer et modif
         _imgSkin.sprite = data.skin;
         _textDialogue.text = data.dialogue;
     }
