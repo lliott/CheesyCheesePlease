@@ -16,8 +16,9 @@ public class PassengerInfoController : MonoBehaviour
     //Index
     [SerializeField] private int index;
 
-    //Database
+    //Database && Script
     [SerializeField] private PassengerDatabase _passengerDatabase;
+    [SerializeField] private Offrandes _offrandesScript;
 
     void Start(){
          if (instance != null) 
@@ -38,6 +39,7 @@ public class PassengerInfoController : MonoBehaviour
         _txtCaption.text = data.passportSettings.caption;
         _imgSkin.sprite = data.skin;
         _textDialogue.text = data.dialogue;
+        _imgGift.sprite = _offrandesScript.UpdateGiftImage(data.gift);
     }
 
     public void SetIndex(int nextIndex)

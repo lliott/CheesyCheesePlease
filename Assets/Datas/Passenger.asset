@@ -28,7 +28,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: d56e0331976b30745a631dc145a23ded, type: 3}
     gift: {fileID: 0}
     passengerType: 0
-    dialogue: 
+    dialogue: gefzzzzzzzzzz
   - name: Terrorist1
     passportSettings:
       photo: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
@@ -36,7 +36,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
     gift: {fileID: 0}
     passengerType: 1
-    dialogue: 
+    dialogue: zzzzzzzzzzzzzz
   - name: Terrorist2
     passportSettings:
       photo: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
@@ -44,7 +44,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
     gift: {fileID: 0}
     passengerType: 1
-    dialogue: 
+    dialogue: ggrzzzzf
   - name: Tourist3
     passportSettings:
       photo: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
@@ -52,7 +52,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
     gift: {fileID: 0}
     passengerType: 0
-    dialogue: 
+    dialogue: o)opopk
   - name: Terrorist3
     passportSettings:
       photo: {fileID: 21300000, guid: a44a184a4a6103140aa3db65272b24f2, type: 3}

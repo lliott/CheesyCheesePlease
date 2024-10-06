@@ -22,8 +22,9 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private int totalPassengersPerRound = 10;
     [SerializeField] private int totalRounds = 1;
 
-    [Header("Température")]
+    [Header("Scripts")]
     [SerializeField] private Temperature _temperatureScript;
+    [SerializeField] private Offrandes _offrandesScript;
 
     [Header("Passport settings")]
     [SerializeField] GameObject passport;
@@ -93,6 +94,11 @@ public class RoundManager : MonoBehaviour
     public void ShowNextPassenger()
     {
         Debug.Log("Showing next passenger");
+
+        //Reset game
+        PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
+        _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
+        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
 
         if (currentPassengerIndex < passengersToDisplay.Count)
         {
