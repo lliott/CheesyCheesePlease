@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinalChecking : MonoBehaviour
 {
     [SerializeField] private TerroristInfoController _terroristInfoController;
+    [SerializeField] private RoundManager _roundManager;
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
 
