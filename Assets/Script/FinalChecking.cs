@@ -13,12 +13,14 @@ public class FinalChecking : MonoBehaviour
     public void Accept(){
         Check(true);
         RoundManager.instance.ShowNextPassenger();
+        _roundManager.isAccepted = true;
     }
 
     //Refuser passenger
     public void Refuse(){
         Check(false);
         RoundManager.instance.ShowNextPassenger();
+        _roundManager.isAccepted = false;
     }
 
     private void Check(bool response){

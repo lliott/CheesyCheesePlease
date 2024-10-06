@@ -36,6 +36,7 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Vector3 imageOffset = new Vector3(20f, 0f, 0f);
     [SerializeField] private float fadeDuration = 2.0f;
     [SerializeField] private float delayBeforeFade = 0.5f;
+    public bool isAccepted;
 
     private Vector3 originalPosition;
     private Color originalColor;
@@ -137,6 +138,7 @@ public class RoundManager : MonoBehaviour
 
         ActivatePassport();
         currentPassengerIndex++;
+        isAccepted = false;
     }
 
     private IEnumerator HidePassengerImageWithFade()
