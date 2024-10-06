@@ -11,6 +11,7 @@ public class PassengerInfoController : MonoBehaviour
     [SerializeField] private Text _txtCaption; 
     [SerializeField] private Image _imgSkin;
     [SerializeField] private Image _imgGift;
+    [SerializeField] private Text _textDialogue;
 
     //Index
     [SerializeField] private int index;
@@ -36,6 +37,7 @@ public class PassengerInfoController : MonoBehaviour
         _txtName.text = data.name;
         _txtCaption.text = data.passportSettings.caption;
         _imgSkin.sprite = data.skin;
+        _textDialogue.text = data.dialogue;
     }
 
     public void SetIndex(int nextIndex)

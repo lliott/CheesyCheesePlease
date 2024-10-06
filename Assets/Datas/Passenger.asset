@@ -20,6 +20,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: 6fd914b78e1e1fb4f9f49c231c98c232, type: 3}
     gift: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     passengerType: 0
+    dialogue: hdhdiid
   - name: Tourist2
     passportSettings:
       photo: {fileID: 21300000, guid: d56e0331976b30745a631dc145a23ded, type: 3}
@@ -27,6 +28,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: d56e0331976b30745a631dc145a23ded, type: 3}
     gift: {fileID: 0}
     passengerType: 0
+    dialogue: 
   - name: Terrorist1
     passportSettings:
       photo: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
@@ -34,6 +36,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
     gift: {fileID: 0}
     passengerType: 1
+    dialogue: 
   - name: Terrorist2
     passportSettings:
       photo: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
@@ -41,6 +44,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
     gift: {fileID: 0}
     passengerType: 1
+    dialogue: 
   - name: Tourist3
     passportSettings:
       photo: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
@@ -48,6 +52,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
     gift: {fileID: 0}
     passengerType: 0
+    dialogue: 
   - name: Terrorist3
     passportSettings:
       photo: {fileID: 21300000, guid: a44a184a4a6103140aa3db65272b24f2, type: 3}
@@ -55,6 +60,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: a44a184a4a6103140aa3db65272b24f2, type: 3}
     gift: {fileID: 0}
     passengerType: 1
+    dialogue: 
   - name: Terrorist4
     passportSettings:
       photo: {fileID: 21300000, guid: 5bbdf9710d6deca47a7488ddd5e42cba, type: 3}
@@ -62,6 +68,7 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: 5bbdf9710d6deca47a7488ddd5e42cba, type: 3}
     gift: {fileID: 0}
     passengerType: 1
+    dialogue: 
   - name: Terrorist5
     passportSettings:
       photo: {fileID: 21300000, guid: ffb05853c866d8648afec0637c061cf1, type: 3}
@@ -69,3 +76,4 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: ffb05853c866d8648afec0637c061cf1, type: 3}
     gift: {fileID: 0}
     passengerType: 1
+    dialogue: 

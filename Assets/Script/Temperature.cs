@@ -74,20 +74,8 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     private bool GetInterdictions(){
-        if(randomDegree==45){
+        if(randomDegree==28 || randomDegree==41 || randomDegree==35 || randomDegree==47 ){
             Debug.Log("interdit"+randomDegree);
-            return false;
-        } else if(randomDegree==26){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree==42){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree==47){
-            Debug.Log("interdit"+randomDegree);
-            return false;
-        }else if(randomDegree > 28 && randomDegree< 32){
-            Debug.Log("interdit entre 28 et 32 exclus "+ randomDegree);
             return false;
         }
         return true;

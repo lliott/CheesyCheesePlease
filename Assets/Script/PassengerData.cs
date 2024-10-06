@@ -12,4 +12,5 @@ public class PassengerData
     public Sprite skin;
     public Sprite gift; //offrande
     public PassengerType passengerType;
+    public string dialogue;
 }
