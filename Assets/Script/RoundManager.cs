@@ -117,6 +117,7 @@ public class RoundManager : MonoBehaviour
             {
                 Debug.Log("All rounds completed!");
                 Debug.Log("FINITO");
+                Results.instance.ConcludeGame();
             }
         }
     }

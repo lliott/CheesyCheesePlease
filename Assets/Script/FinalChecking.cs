@@ -43,8 +43,10 @@ public class FinalChecking : MonoBehaviour
         
         if(result == response){
             Debug.Log("Gagné pr ce rat");
+            Results.instance.success++;
         } else{
             Debug.Log("Perdu");
+            Results.instance.fails++;
         }
 
     }
