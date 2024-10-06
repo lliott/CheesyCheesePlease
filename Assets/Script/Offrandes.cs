@@ -14,6 +14,7 @@ public class Offrandes : MonoBehaviour
 
     [Header("PlaceHolder Offrande interdite")]
     [SerializeField] private Image forbiddenGift;
+    private Gift currentForbiddenGift;
 
     public Sprite UpdateGiftImage(Gift  gift){
         if(gift == Gift.Gift01){
@@ -32,10 +33,20 @@ public class Offrandes : MonoBehaviour
     public void GenerateForbiddenGift(){
         Gift[] gifts = (Gift[])System.Enum.GetValues(typeof(Gift));
         int randomIndex = Random.Range(0, gifts.Length);
-        Gift randomForbiddenGift = gifts[randomIndex];
+        currentForbiddenGift = gifts[randomIndex];
 
-        forbiddenGift.sprite = UpdateGiftImage(randomForbiddenGift);
+        forbiddenGift.sprite = UpdateGiftImage(currentForbiddenGift);
     }
+
+    public bool isOffrandeCorrect(){
+        Gift gift = RoundManager.instance.currentPassenger.gift;
+        if(currentForbiddenGift==gift){
+            return false;
+        }
+        return true;
+    }
+
+
     void Start()
     {
     }

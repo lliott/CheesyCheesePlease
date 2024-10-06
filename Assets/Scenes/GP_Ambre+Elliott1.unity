@@ -3500,6 +3500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _terroristInfoController: {fileID: 147195368}
   _temperatureScript: {fileID: 1716909182}
+  _offrandesScript: {fileID: 762444351}
 --- !u!1 &1567064052
 GameObject:
   m_ObjectHideFlags: 0
