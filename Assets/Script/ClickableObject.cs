@@ -21,6 +21,7 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
             }else{
                 _isDisplaying = false ;
                 objectToDisplay.SetActive(false);
+                ResetDialogue();
             }
         }
     }
@@ -31,11 +32,18 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if(objectToDisplay.name == "dialogue"){
+            Debug.Log("objet à display: dialogue");
+            PassengerInfoController.instance.GiveGift();
+        }
+
         _isDisplaying = true ;
 
         if (!objectToDisplay.activeSelf)
         {
             objectToDisplay.SetActive(true);
         }
+
+        
     }
 }

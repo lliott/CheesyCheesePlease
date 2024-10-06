@@ -26,8 +26,10 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
 
-    [Header("Passport settings")]
+    [Header("Passenger Stuff")]
     [SerializeField] GameObject passport;
+    [SerializeField] GameObject offrande;
+    [SerializeField] GameObject dialogue;
 
     [Header("Passenger Image Settings")]
     [SerializeField] private Image passengerImage;
@@ -138,7 +140,7 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator HidePassengerImageWithFade()
     {
-        DeactivatePassport();
+        DeactivateStuff();
 
         Vector3 currentPosition = passengerImage.transform.localPosition;
         Vector3 targetPosition = originalPosition;
@@ -198,9 +200,11 @@ public class RoundManager : MonoBehaviour
         passport.SetActive(true);
     }
 
-    private void DeactivatePassport()
+    private void DeactivateStuff()
     {
         passport.SetActive(false);
+        offrande.SetActive(false);
+        dialogue.SetActive(false);
     }
 
 

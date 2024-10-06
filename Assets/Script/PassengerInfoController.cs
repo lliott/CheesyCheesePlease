@@ -29,6 +29,8 @@ public class PassengerInfoController : MonoBehaviour
         { 
             instance = this; 
         } 
+
+        _imgGift.gameObject.SetActive(false);
     }
 
     //Appelé dans RoundManager
@@ -39,7 +41,6 @@ public class PassengerInfoController : MonoBehaviour
         _txtCaption.text = data.passportSettings.caption;
         _imgSkin.sprite = data.skin;
         _textDialogue.text = data.dialogue;
-        _imgGift.sprite = _offrandesScript.UpdateGiftImage(data.gift);
     }
 
     public void SetIndex(int nextIndex)
@@ -57,5 +58,11 @@ public class PassengerInfoController : MonoBehaviour
         {
             Debug.Log("can't increment further");
         }
+    }
+
+//Si dialogue déclenché > give gift
+    public void GiveGift(){
+        _imgGift.gameObject.SetActive(true);
+        _imgGift.sprite = _offrandesScript.UpdateGiftImage(RoundManager.instance.currentPassenger.gift);
     }
 }

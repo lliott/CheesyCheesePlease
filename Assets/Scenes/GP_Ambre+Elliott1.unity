@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 133528296}
   - component: {fileID: 133528295}
   m_Layer: 5
-  m_Name: Bulle dialogue
+  m_Name: dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1327,7 +1327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDisplay: {fileID: 133528293}
-  _displayTime: 0
+  _displayTime: 4
 --- !u!1 &557937133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,6 +3467,8 @@ MonoBehaviour:
   _temperatureScript: {fileID: 1716909182}
   _offrandesScript: {fileID: 762444351}
   passport: {fileID: 557937133}
+  offrande: {fileID: 765944366}
+  dialogue: {fileID: 133528293}
   passengerImage: {fileID: 476072704}
   imageOffset: {x: 200, y: 0, z: 0}
   fadeDuration: 1.5
