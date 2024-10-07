@@ -29,7 +29,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     //Random
     private int chance;
     private int randomDegree;
-    private List<int> randomInterdictions=new List<int>();
+    [SerializeField]private List<int> randomInterdictions=new List<int>();
 
     private bool available = true; //Passenger valide
 
@@ -41,7 +41,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         startScanPosition = scannerTransform.anchoredPosition;
         _audio = GetComponent<AudioSource>();
 
-        DisplayInterdictions();
+        //DisplayInterdictions();
         ResetThermometer();
     }
 
@@ -141,9 +141,11 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         return true;
     }
 
-    private void DisplayInterdictions(){
+    public void DisplayInterdictions(){
+        Debug.Log("yaaaa");
         _txtInterdictions.text ="UNAUTHORISED TEMPERATURES: \n";
-        foreach(var value in randomInterdictions){
+        foreach(var value in randomInterdictions){ 
+            Debug.Log("yaaaa");
             _txtInterdictions.text += value + "°C\n";
         }
     }

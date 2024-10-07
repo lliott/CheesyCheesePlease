@@ -66,6 +66,7 @@ public class RoundManager : MonoBehaviour
         StartNewRound();
         _offrandesScript.GenerateForbiddenGift(); //Generate new gift
         _temperatureScript.GetFourRandomInterdictions(); //Generate new interdictions
+        _temperatureScript.DisplayInterdictions();
     }
 
     void StartNewRound()

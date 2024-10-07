@@ -689,6 +689,7 @@ RectTransform:
   - {fileID: 5044740912055535482}
   - {fileID: 1878428466918739751}
   - {fileID: 5497256867583175463}
+  - {fileID: 5339148625250809708}
   m_Father: {fileID: 7610120892542248808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -746,14 +747,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b70ea2124b70a74e953f72cabb4e399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClickable: 0
   _screen: {fileID: 8934117542548878312}
   _degreeTxt: {fileID: 388727469830133458}
-  _txtInterdictions: {fileID: 8331293599164189157}
+  _txtInterdictions: {fileID: 818247432083850276}
   _redScreen: {fileID: 21300000, guid: af5cc714ada6c0c4b9a90dabdfe2098f, type: 3}
   _greenScreen: {fileID: 21300000, guid: 081bae0399530dd448749063314376fb, type: 3}
   _displayTime: 2
   remainingTime: 0
-  randomInterdictions: 
+  moveDuration: 1
+  endScanPosition: {x: 0, y: 0}
+  randomInterdictions: 05000000
 --- !u!1 &1495072414693615979
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a924566d07d2b4e808bea97e1628e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tempScript: {fileID: 0}
   objectToDisplay: {fileID: 6700217865440957070}
   _displayTime: 0
 --- !u!1 &2599025773365811624
@@ -1144,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a924566d07d2b4e808bea97e1628e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tempScript: {fileID: 0}
   objectToDisplay: {fileID: 2905168033019757990}
   _displayTime: 0
 --- !u!1 &2890117996022401881
@@ -2169,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a924566d07d2b4e808bea97e1628e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tempScript: {fileID: 0}
   objectToDisplay: {fileID: 750702106843297930}
   _displayTime: 4
 --- !u!1 &5195233952135130759
@@ -3922,6 +3929,85 @@ MonoBehaviour:
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
     eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
     in culpa qui officia deserunt mollit anim id est laborum.
+--- !u!1 &7786350673193501907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5339148625250809708}
+  - component: {fileID: 7125925496636849135}
+  - component: {fileID: 818247432083850276}
+  m_Layer: 5
+  m_Name: TextTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5339148625250809708
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786350673193501907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4145934777420300931}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 43.12463}
+  m_SizeDelta: {x: 160, y: 116.2493}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7125925496636849135
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786350673193501907}
+  m_CullTransparentMesh: 1
+--- !u!114 &818247432083850276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786350673193501907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
 --- !u!1 &7801445015473562100
 GameObject:
   m_ObjectHideFlags: 0
