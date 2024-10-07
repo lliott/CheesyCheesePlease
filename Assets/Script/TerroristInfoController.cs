@@ -83,4 +83,15 @@ public class TerroristInfoController : MonoBehaviour
         }
         return false;
     }
+
+    public bool isWrongID()
+    {
+        PassengerData currentPassenger = RoundManager.instance.currentPassenger;
+        Debug.Log("name :" + currentPassenger.name);
+        if (currentPassenger.passengerType == PassengerType.WrongID)
+        {
+            return true;
+        }
+        return false;
+    }
 }
