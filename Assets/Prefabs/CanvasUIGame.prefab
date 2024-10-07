@@ -154,7 +154,6 @@ RectTransform:
   - {fileID: 4145934777420300931}
   - {fileID: 4108816757949208955}
   - {fileID: 356487605087226290}
-  - {fileID: 5022389625605304244}
   - {fileID: 8831730417544747587}
   - {fileID: 7794076704455005362}
   m_Father: {fileID: 0}
@@ -607,11 +606,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b70ea2124b70a74e953f72cabb4e399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isClickable: 0
   _screen: {fileID: 8934117542548878312}
   _degreeTxt: {fileID: 388727469830133458}
   _txtInterdictions: {fileID: 8331293599164189157}
+  _redScreen: {fileID: 0}
+  _greenScreen: {fileID: 0}
   _displayTime: 2
   remainingTime: 0
+  moveDuration: 1
+  endScanPosition: {x: 0, y: 0}
 --- !u!1 &1387975765661170657
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,99 +827,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Registre des terroristes
---- !u!1 &2072992597558340624
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5022389625605304244}
-  - component: {fileID: 922231020584197023}
-  - component: {fileID: 4849279015971109952}
-  - component: {fileID: 7238617968820624130}
-  m_Layer: 5
-  m_Name: temperature
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &5022389625605304244
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072992597558340624}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7610120892542248808}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 486, y: -53}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &922231020584197023
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072992597558340624}
-  m_CullTransparentMesh: 1
---- !u!114 &4849279015971109952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072992597558340624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!114 &7238617968820624130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072992597558340624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b70ea2124b70a74e953f72cabb4e399, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _screen: {fileID: 8934117542548878312}
-  _degreeTxt: {fileID: 388727469830133458}
-  _txtInterdictions: {fileID: 0}
-  _displayTime: 2
-  remainingTime: 0
 --- !u!1 &2599025773365811624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a924566d07d2b4e808bea97e1628e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tempScript: {fileID: 0}
   objectToDisplay: {fileID: 2905168033019757990}
   _displayTime: 0
 --- !u!1 &2905168033019757990
@@ -1808,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a924566d07d2b4e808bea97e1628e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tempScript: {fileID: 1462097171996395463}
   objectToDisplay: {fileID: 750702106843297930}
   _displayTime: 4
 --- !u!1 &5145801329749322191
