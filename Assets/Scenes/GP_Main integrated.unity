@@ -481,6 +481,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b70ea2124b70a74e953f72cabb4e399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1629334196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6700217865440957070, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+  m_PrefabInstance: {fileID: 8375366597770111106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1769287826 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2819300151154881998, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
@@ -672,6 +677,10 @@ PrefabInstance:
       propertyPath: passengerImage
       value: 
       objectReference: {fileID: 476072704}
+    - target: {fileID: 7490965804286502594, guid: 2b4ed7e9d71cf9e488378e216077fe40, type: 3}
+      propertyPath: tutorialToDisplay
+      value: 
+      objectReference: {fileID: 1629334196}
     - target: {fileID: 7490965804286502594, guid: 2b4ed7e9d71cf9e488378e216077fe40, type: 3}
       propertyPath: _temperatureScript
       value: 
