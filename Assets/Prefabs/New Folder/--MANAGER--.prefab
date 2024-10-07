@@ -276,6 +276,9 @@ MonoBehaviour:
   totalRounds: 1
   _temperatureScript: {fileID: 0}
   _offrandesScript: {fileID: 6004818668212794165}
+  _ropesList:
+  - {fileID: 0}
+  - {fileID: 0}
   passport: {fileID: 0}
   offrande: {fileID: 0}
   dialogue: {fileID: 0}
