@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Intro.unity
     guid: 954afff41a764524688e1f7381c5d466
+  - enabled: 1
+    path: Assets/Scenes/GP_QuentinMain integrated 1.unity
+    guid: 907b4517bcfa04d4091a0653ead74fa7
   m_configObjects: {}
