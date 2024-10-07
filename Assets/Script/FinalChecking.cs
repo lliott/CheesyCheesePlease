@@ -9,6 +9,7 @@ public class FinalChecking : MonoBehaviour
     [SerializeField] private RoundManager _roundManager;
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
+    private AudioSource[] _audio = new AudioSource[4]; 
 
     void Start(){
         if (instance != null)
@@ -19,6 +20,8 @@ public class FinalChecking : MonoBehaviour
         {
             instance = this;
         }
+        
+        _audio = GetComponents<AudioSource>();
     }
 
     //Accepter passenger
@@ -26,6 +29,8 @@ public class FinalChecking : MonoBehaviour
         Check(true);
         RoundManager.instance.ShowNextPassenger();
         _roundManager.isAccepted = true;
+        _audio[2].Play();
+        _audio[3].Play();
     }
 
     //Refuser passenger
@@ -33,6 +38,8 @@ public class FinalChecking : MonoBehaviour
         Check(false);
         RoundManager.instance.ShowNextPassenger();
         _roundManager.isAccepted = false;
+        _audio[0].Play();
+        _audio[1].Play();
     }
 
     private void Check(bool response){

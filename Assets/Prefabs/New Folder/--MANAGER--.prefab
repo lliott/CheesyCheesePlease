@@ -161,6 +161,7 @@ Transform:
   - {fileID: 7592031045350394454}
   - {fileID: 1411104667602533915}
   - {fileID: 4208878313864144611}
+  - {fileID: 8258865708673612641}
   - {fileID: 6744024982518098657}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,7 +315,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7792177889051029235}
   - component: {fileID: 7490965804286502594}
-  - component: {fileID: 4199660016228854916}
   - component: {fileID: 8759056314336689354}
   m_Layer: 0
   m_Name: RoundManager
@@ -379,22 +379,6 @@ MonoBehaviour:
   fadeDuration: 1.5
   delayBeforeFade: 0.5
   isAccepted: 0
---- !u!114 &4199660016228854916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7231518301176743141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 927ca3d112cb86a45876823c1453b7b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _terroristInfoController: {fileID: 5919276448436057191}
-  _roundManager: {fileID: 7490965804286502594}
-  _temperatureScript: {fileID: 0}
-  _offrandesScript: {fileID: 6004818668212794165}
 --- !u!114 &8759056314336689354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -464,4 +448,52 @@ MonoBehaviour:
   _textDialogue: {fileID: 0}
   index: 0
   _passengerDatabase: {fileID: 11400000, guid: f85ae22a1672e8e49be5c821650ea8ac, type: 2}
+  _offrandesScript: {fileID: 6004818668212794165}
+--- !u!1 &7833716130900514146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8258865708673612641}
+  - component: {fileID: 8396147123668973612}
+  m_Layer: 0
+  m_Name: FinalChecking
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8258865708673612641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833716130900514146}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5670391328061759791}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8396147123668973612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7833716130900514146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927ca3d112cb86a45876823c1453b7b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _terroristInfoController: {fileID: 5919276448436057191}
+  _roundManager: {fileID: 7490965804286502594}
+  _temperatureScript: {fileID: 0}
   _offrandesScript: {fileID: 6004818668212794165}

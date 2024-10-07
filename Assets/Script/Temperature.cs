@@ -33,9 +33,13 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
     private bool available = true; //Passenger valide
 
+    //Audio
+    private AudioSource _audio;
+
     void Start(){
         scannerTransform = GetComponent<RectTransform>();
         startScanPosition = scannerTransform.anchoredPosition;
+        _audio = GetComponent<AudioSource>();
 
         DisplayInterdictions();
         ResetThermometer();
@@ -77,6 +81,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     { 
         if(isClickable){
             _isDisplaying = true;
+            _audio.Play();
 
             //Print a randomDegree
             UpdateUI();
