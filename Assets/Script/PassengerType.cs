@@ -6,5 +6,6 @@ public enum PassengerType
 {
     Tourist,
     Terrorist,
-    Citizen
+    Citizen,
+    WrongID
 }
