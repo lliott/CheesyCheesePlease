@@ -135,7 +135,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
 
     private void DisplayInterdictions(){
-        _txtInterdictions.text ="Interdictions de températures\n";
+        _txtInterdictions.text ="UNAUTHORISED TEMPERATURES: \n";
         foreach(var value in randomInterdictions){
             _txtInterdictions.text += value + "°C\n";
         }

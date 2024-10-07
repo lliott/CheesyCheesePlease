@@ -107,7 +107,7 @@ public class RoundManager : MonoBehaviour
             rope.Invoke("ResetRope",1f); //reset l etat des cordes
         }
 
-        if (currentPassengerIndex < passengersToDisplay.Count)
+        if (currentPassengerIndex < totalPassengersPerRound)
         {
             StartCoroutine(TransitionToNextPassenger());
         }
