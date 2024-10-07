@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ClickableObject : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private Temperature _tempScript;
     [SerializeField] private GameObject objectToDisplay;
     [SerializeField] private float _displayTime;
     private float _remainingTime ;
@@ -35,6 +36,7 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
         if(objectToDisplay.name == "dialogue"){
             Debug.Log("objet à display: dialogue");
             PassengerInfoController.instance.GiveGift();
+            _tempScript.GetScanner();// Monter le scanner
         }
 
         _isDisplaying = true ;
