@@ -21,7 +21,6 @@ public class TerroristInfoController : MonoBehaviour
 
             if (data != null && data.passengerType == PassengerType.Terrorist)
             {
-                Debug.Log("BBBBBBBBH");
                 imgPhoto.sprite = data.passportSettings.photo;
                 txtName.text = data.name;
                 txtEnum.text = data.passengerType.ToString();
