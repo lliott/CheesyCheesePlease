@@ -6,6 +6,7 @@ public class FinalChecking : MonoBehaviour
 {
     public static FinalChecking instance; 
     [SerializeField] private TerroristInfoController _terroristInfoController;
+    [SerializeField] private PassengerData _passengerData;
     [SerializeField] private RoundManager _roundManager;
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
@@ -50,7 +51,16 @@ public class FinalChecking : MonoBehaviour
         }else{
             Debug.Log("pas terroriste");
         }
-        if(!_temperatureScript.isTemperatureCorrect()){
+        if (_terroristInfoController.isWrongID())
+        {
+            Debug.Log("ID is wrong");
+            result = false;
+        }
+        else
+        {
+            Debug.Log("id est correcte");
+        }
+        if (!_temperatureScript.isTemperatureCorrect()){
             Debug.Log("mauvaise température");
             result = false ;
         }else{

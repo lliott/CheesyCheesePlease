@@ -13,6 +13,7 @@ public class RoundManager : MonoBehaviour
 
     [Header("Passenger & Round settings")]
     public PassengerData currentPassenger;
+    [SerializeField] private GameObject tutorialToDisplay;
 
     private List<PassengerData> passengersToDisplay;
     private int currentPassengerIndex = 0;
@@ -47,6 +48,8 @@ public class RoundManager : MonoBehaviour
 
     void Start()
     {
+        tutorialToDisplay.SetActive(true);
+
         if (instance != null)
         {
             Destroy(instance);
