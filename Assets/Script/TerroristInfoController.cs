@@ -12,9 +12,12 @@ public class TerroristInfoController : MonoBehaviour
     [SerializeField] private PassengerDatabase passengerDatabase;
     private List<PassengerData> terroristList = new List <PassengerData>();
     private int indexTerrorist;
+    private AudioSource[] _audio = new AudioSource[2]; 
 
     void Start ()
     {
+        _audio = GetComponents<AudioSource>();
+
         for (int i = 0; i < passengerDatabase.datas.Count; i++)
         {
             PassengerData data = passengerDatabase.datas[i];
@@ -47,6 +50,7 @@ public class TerroristInfoController : MonoBehaviour
 
     public void Next()
     {
+        _audio[0].Play();
         if (indexTerrorist < terroristList.Count - 1)
         {
             indexTerrorist++;
@@ -61,6 +65,7 @@ public class TerroristInfoController : MonoBehaviour
 
     public void Previous()
     {
+        _audio[0].Play();
         if (indexTerrorist == 0)
         {
             indexTerrorist = terroristList.Count - 1;
