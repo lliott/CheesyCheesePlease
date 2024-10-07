@@ -12,12 +12,18 @@ public class Cordes : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerEx
     private RectTransform ropeTransform;  
     private Vector2 startPosition;                         
     private bool isTriggered = false;                     
-    private bool hasRebounded = false;                     
+    private bool hasRebounded = false;     
+
+    //Audio
+    private AudioSource _audio;                
 
     void Start()
     {
         ropeTransform = GetComponent<RectTransform>();
+        _audio = GetComponent<AudioSource>();
+
         startPosition = ropeTransform.anchoredPosition;
+        
     }
 
     
@@ -75,6 +81,7 @@ public class Cordes : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerEx
     // rebond
     private IEnumerator Rebound()
     {
+        _audio.Play();
         Vector2 targetPosition = ropeTransform.anchoredPosition + new Vector2(0, reboundDistance); // Position cible pour le rebond
         float elapsedTime = 0f;
 

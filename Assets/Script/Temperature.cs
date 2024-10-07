@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class Temperature : MonoBehaviour, IPointerClickHandler
 {
+    [HideInInspector] public bool isClickable=false;
+
     [Header("UI")]
     [SerializeField] private Image _screen;
     [SerializeField] private Text _degreeTxt;
@@ -18,15 +20,28 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     public float remainingTime;
     private bool _isDisplaying = false;
 
+    [Header("Move Scanner")]
+    [SerializeField] private float moveDuration = 1f;             
+    [SerializeField] private Vector2 endScanPosition;   
+    private Vector2 startScanPosition;    
+    private RectTransform scannerTransform;    
+
     //Random
     private int chance;
     private int randomDegree;
-    [SerializeField] private List<int> randomInterdictions=new List<int>();
+    private List<int> randomInterdictions=new List<int>();
 
     private bool available = true; //Passenger valide
 
+    //Audio
+    private AudioSource _audio;
+
     void Start(){
-        DisplayInterdictions() ;
+        scannerTransform = GetComponent<RectTransform>();
+        startScanPosition = scannerTransform.anchoredPosition;
+        _audio = GetComponent<AudioSource>();
+
+        DisplayInterdictions();
         ResetThermometer();
     }
 
@@ -47,6 +62,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         _degreeTxt.text = null;
     }
 
+
     //Appelée au début de chaque round
     public void GenerateResults(){
         //Reset available à chq round
@@ -58,24 +74,26 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         if(chance<=2){                   // = 2/10 chances
             available = false;
         }
-        randomDegree = Random.Range(5,81);
+        randomDegree = Random.Range(25,51);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     { 
-        _isDisplaying = true;
+        if(isClickable){
+            _isDisplaying = true;
+            _audio.Play();
 
-        //Print a randomDegree
-        UpdateUI();
-        
-        _screen.gameObject.SetActive(true);
-        if(!available){
-            _screen.sprite = _redScreen;
-        } else{
-            _screen.sprite = _greenScreen;
-            available = GetInterdictions();
-        }
-
+            //Print a randomDegree
+            UpdateUI();
+            
+            _screen.gameObject.SetActive(true);
+            if(!available){
+                _screen.sprite = _redScreen;
+            } else{
+                _screen.sprite = _greenScreen;
+                available = GetInterdictions();
+            }
+        } 
     }
 
     public void GetFourRandomInterdictions(){
@@ -85,16 +103,17 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
     public void GenerateRandomInterdictions(){
         int a;
-        bool firstRange = Random.value < 0.5f; // 50% chance pr chq plage de valeurs
+        //bool firstRange = Random.value < 0.5f; // 50% chance pr chq plage de valeurs
 
-        if (firstRange)
-        {
-            a = Random.Range(5, 25);      
-        }
-        else
-        {
-            a = Random.Range(51, 81);
-        }
+        // if (firstRange)
+        // {
+        //     a = Random.Range(5, 25);      
+        // }
+        // else
+        // {
+        //     a = Random.Range(51, 81);
+        // }
+        a = Random.Range(25,51);
         
         //Check si y a pas de doublons
         if(randomInterdictions.Count != 0){  
@@ -131,6 +150,57 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
     private void UpdateUI(){
         _degreeTxt.text = randomDegree.ToString() + "°";
+    }
+
+    //Qd l'offrande est transmise
+    public void GetScanner(){
+        StartCoroutine(ScanMovement());
+    }
+
+    private IEnumerator ScanMovement()
+    {
+        float elapsedTime = 0f;
+
+        scannerTransform.anchoredPosition = startScanPosition;
+
+        // Anim
+        while (elapsedTime < moveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            scannerTransform.anchoredPosition = Vector2.Lerp(startScanPosition, endScanPosition, elapsedTime / moveDuration);
+
+            yield return null;
+        }
+
+        scannerTransform.anchoredPosition = endScanPosition;
+        isClickable =true;
+    }
+
+    //A chq nouvel arrivant (RoundManager ResetGame)
+    public void RemoveScanner(){
+        StartCoroutine(LaunchRemoveScanner());
+    }
+
+    private IEnumerator LaunchRemoveScanner()
+    {
+        isClickable = false ;
+        float elapsedTime = 0f;
+
+        scannerTransform.anchoredPosition = endScanPosition;
+
+        // Anim
+        while (elapsedTime < moveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            scannerTransform.anchoredPosition = Vector2.Lerp(endScanPosition, startScanPosition, elapsedTime / moveDuration);
+
+            yield return null;
+        }
+
+        scannerTransform.anchoredPosition = startScanPosition;
+        
     }
 
     //A appeler ds la verif finale à la fin de chq round

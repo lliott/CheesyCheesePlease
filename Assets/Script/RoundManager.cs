@@ -43,6 +43,9 @@ public class RoundManager : MonoBehaviour
     private Vector3 originalPosition;
     private Color originalColor;
 
+    //Audio
+    private AudioSource _audio;
+
     void Start()
     {
         tutorialToDisplay.SetActive(true);
@@ -55,6 +58,7 @@ public class RoundManager : MonoBehaviour
         {
             instance = this;
         }
+        _audio = GetComponent<AudioSource>();
 
         originalPosition = passengerImage.transform.localPosition;
         originalColor = passengerImage.color;
@@ -108,6 +112,9 @@ public class RoundManager : MonoBehaviour
         _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
         foreach(var rope in  _ropesList){
             rope.Invoke("ResetRope",1f); //reset l etat des cordes
+        }
+        if(_temperatureScript.isClickable){
+            _temperatureScript.RemoveScanner();
         }
 
         if (currentPassengerIndex < totalPassengersPerRound)
@@ -187,6 +194,7 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator ShowPassengerImageWithFade()
     {
+        _audio.Play();
         passengerImage.transform.localPosition = originalPosition;
 
         Vector3 initialPosition = originalPosition;
