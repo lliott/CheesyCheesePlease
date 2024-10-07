@@ -106,6 +106,7 @@ public class RoundManager : MonoBehaviour
         foreach(var rope in  _ropesList){
             rope.Invoke("ResetRope",1f); //reset l etat des cordes
         }
+        _temperatureScript.RemoveScanner();
 
         if (currentPassengerIndex < totalPassengersPerRound)
         {

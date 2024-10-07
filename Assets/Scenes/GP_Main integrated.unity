@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 29.8142
       objectReference: {fileID: 0}
+    - target: {fileID: 344221650670587945, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: _tempScript
+      value: 
+      objectReference: {fileID: 1622145882}
     - target: {fileID: 521066591039100115, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_Name
       value: CanvasUIGame
@@ -765,6 +769,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1462097171996395463, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: endScanPosition.x
+      value: -142
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462097171996395463, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: endScanPosition.y
+      value: 79
+      objectReference: {fileID: 0}
     - target: {fileID: 3361803999382707794, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -773,6 +785,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 147195368}
+    - target: {fileID: 4145934777420300931, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4145934777420300931, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4872342293051426188, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Temperature : MonoBehaviour, IPointerClickHandler
 {
-    public bool isClickable=false;
+    [HideInInspector] public bool isClickable=false;
 
     [Header("UI")]
     [SerializeField] private Image _screen;
@@ -57,6 +57,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         _screen.gameObject.SetActive(false);
         _degreeTxt.text = null;
     }
+
 
     //Appelée au début de chaque round
     public void GenerateResults(){
@@ -168,6 +169,32 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
 
         scannerTransform.anchoredPosition = endScanPosition;
         isClickable =true;
+    }
+
+    //A chq nouvel arrivant (RoundManager ResetGame)
+    public void RemoveScanner(){
+        StartCoroutine(LaunchRemoveScanner());
+    }
+
+    private IEnumerator LaunchRemoveScanner()
+    {
+        isClickable = false ;
+        float elapsedTime = 0f;
+
+        scannerTransform.anchoredPosition = endScanPosition;
+
+        // Anim
+        while (elapsedTime < moveDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            scannerTransform.anchoredPosition = Vector2.Lerp(endScanPosition, startScanPosition, elapsedTime / moveDuration);
+
+            yield return null;
+        }
+
+        scannerTransform.anchoredPosition = startScanPosition;
+        
     }
 
     //A appeler ds la verif finale à la fin de chq round
