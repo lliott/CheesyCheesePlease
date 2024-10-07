@@ -713,6 +713,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 342358614660400360, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -323.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 342358614660400360, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -79.0762
+      objectReference: {fileID: 0}
+    - target: {fileID: 342358614660400360, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -127.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 342358614660400360, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29.8142
+      objectReference: {fileID: 0}
     - target: {fileID: 521066591039100115, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_Name
       value: CanvasUIGame
@@ -735,19 +751,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 832321981432455529, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -410
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 832321981432455529, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -166
+      value: -35
       objectReference: {fileID: 0}
     - target: {fileID: 832321981432455529, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -129.39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 832321981432455529, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 47.805
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3361803999382707794, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -763,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 147195368}
     - target: {fileID: 7319692305518313205, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7610120892542248808, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_Pivot.x
