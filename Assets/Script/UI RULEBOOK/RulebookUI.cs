@@ -6,15 +6,22 @@ public class RulebookUI : MonoBehaviour
 {
     [SerializeField] private GameObject secondObjectToDisplay;
     [SerializeField] private GameObject firstObjectToDisplay;
+    private AudioSource _audio;
+
+    void Start(){
+        _audio = GetComponent<AudioSource>();
+    }
 
     public void OnClickEnableFirst()
     {
+        _audio.Play();
         setActiveTrue();
         setActiveFalse1();
     }
 
     public void OnClickEnableSecond()
     {
+        _audio.Play();
         setActiveFalse();
         setActiveTrue1();
     }
