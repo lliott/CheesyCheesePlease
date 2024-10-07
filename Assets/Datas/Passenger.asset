@@ -13,71 +13,8 @@ MonoBehaviour:
   m_Name: Passenger
   m_EditorClassIdentifier: 
   datas:
-  - name: Tourist1
+  - name: Jerry
     passportSettings:
-<<<<<<< Updated upstream
-      photo: {fileID: 21300000, guid: 6fd914b78e1e1fb4f9f49c231c98c232, type: 3}
-      caption: gfzezfzfzf
-    skin: {fileID: 21300000, guid: 6fd914b78e1e1fb4f9f49c231c98c232, type: 3}
-    gift: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    passengerType: 0
-    dialogue: hdhdiid
-  - name: Tourist2
-    passportSettings:
-      photo: {fileID: 21300000, guid: d56e0331976b30745a631dc145a23ded, type: 3}
-      caption: yfeuuz
-    skin: {fileID: 21300000, guid: d56e0331976b30745a631dc145a23ded, type: 3}
-    gift: {fileID: 0}
-    passengerType: 0
-    dialogue: gefzzzzzzzzzz
-  - name: Terrorist1
-    passportSettings:
-      photo: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: 25537c61e8366374c9008b48a785957b, type: 3}
-    gift: {fileID: 0}
-    passengerType: 1
-    dialogue: zzzzzzzzzzzzzz
-  - name: Terrorist2
-    passportSettings:
-      photo: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
-    gift: {fileID: 0}
-    passengerType: 1
-    dialogue: ggrzzzzf
-  - name: Tourist3
-    passportSettings:
-      photo: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
-    gift: {fileID: 0}
-    passengerType: 0
-    dialogue: o)opopk
-  - name: Terrorist3
-    passportSettings:
-      photo: {fileID: 21300000, guid: a44a184a4a6103140aa3db65272b24f2, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: a44a184a4a6103140aa3db65272b24f2, type: 3}
-    gift: {fileID: 0}
-    passengerType: 1
-    dialogue: 
-  - name: Terrorist4
-    passportSettings:
-      photo: {fileID: 21300000, guid: 5bbdf9710d6deca47a7488ddd5e42cba, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: 5bbdf9710d6deca47a7488ddd5e42cba, type: 3}
-    gift: {fileID: 0}
-    passengerType: 1
-    dialogue: 
-  - name: Terrorist5
-    passportSettings:
-      photo: {fileID: 21300000, guid: ffb05853c866d8648afec0637c061cf1, type: 3}
-      caption: 
-    skin: {fileID: 21300000, guid: ffb05853c866d8648afec0637c061cf1, type: 3}
-    gift: {fileID: 0}
-    passengerType: 1
-=======
       photo: {fileID: 0}
       species: 
       pelage: 
@@ -224,7 +161,7 @@ MonoBehaviour:
       birth: 
     skin: {fileID: 21300000, guid: 09b15f183e0d5234997f2a0f82d12a22, type: 3}
     gift: 0
-    passengerType: 0
+    passengerType: 2
     dialogue: 
   - name: Indy
     passportSettings:
@@ -242,9 +179,9 @@ MonoBehaviour:
       species: 
       pelage: 
       birth: 
-    skin: {fileID: 21300000, guid: d858377c74691c144a6c7463eb5264d6, type: 3}
+    skin: {fileID: 21300000, guid: 373638bb89d75ef44a4220b6044c9e56, type: 3}
     gift: 0
-    passengerType: 2
+    passengerType: 0
     dialogue: 
   - name: Bulle
     passportSettings:
@@ -264,7 +201,7 @@ MonoBehaviour:
       birth: 
     skin: {fileID: 21300000, guid: df92e009fba603b4dad94d5d6dec9a71, type: 3}
     gift: 0
-    passengerType: 0
+    passengerType: 2
     dialogue: 
   - name: Silver
     passportSettings:
@@ -272,9 +209,9 @@ MonoBehaviour:
       species: 
       pelage: 
       birth: 
-    skin: {fileID: 21300000, guid: df92e009fba603b4dad94d5d6dec9a71, type: 3}
+    skin: {fileID: 21300000, guid: 7ad50ca503fdde74bb0eff957381512b, type: 3}
     gift: 0
-    passengerType: 2
+    passengerType: 0
     dialogue: 
   - name: Henry
     passportSettings:
@@ -285,5 +222,64 @@ MonoBehaviour:
     skin: {fileID: 21300000, guid: b33a68b1aea4fac4a86bef1d017905f0, type: 3}
     gift: 0
     passengerType: 2
->>>>>>> Stashed changes
+    dialogue: 
+  - name: Flash
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: 983a4e0cde819984f9581ea7f0cb5fa6, type: 3}
+    gift: 0
+    passengerType: 0
+    dialogue: 
+  - name: Tagada
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: d858377c74691c144a6c7463eb5264d6, type: 3}
+    gift: 0
+    passengerType: 0
+    dialogue: 
+  - name: Feta
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: f04e4dcae94868049bc3e19baead6138, type: 3}
+    gift: 0
+    passengerType: 0
+    dialogue: 
+  - name: Camember
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: ec5edff120a4c9f4c965f3f09b56111d, type: 3}
+    gift: 0
+    passengerType: 2
+    dialogue: 
+  - name: Brie
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: c376b8b1c2b8f5e409154886f99f8da7, type: 3}
+    gift: 0
+    passengerType: 2
+    dialogue: 
+  - name: Basile
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: 10e7a936e081b114d909ae6bac2a0b92, type: 3}
+    gift: 0
+    passengerType: 2
     dialogue: 

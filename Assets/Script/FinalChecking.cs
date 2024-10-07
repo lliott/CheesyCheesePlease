@@ -4,20 +4,35 @@ using UnityEngine;
 
 public class FinalChecking : MonoBehaviour
 {
+    public static FinalChecking instance; 
     [SerializeField] private TerroristInfoController _terroristInfoController;
+    [SerializeField] private RoundManager _roundManager;
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
+
+    void Start(){
+        if (instance != null)
+        {
+            Destroy(instance);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     //Accepter passenger
     public void Accept(){
         Check(true);
         RoundManager.instance.ShowNextPassenger();
+        _roundManager.isAccepted = true;
     }
 
     //Refuser passenger
     public void Refuse(){
         Check(false);
         RoundManager.instance.ShowNextPassenger();
+        _roundManager.isAccepted = false;
     }
 
     private void Check(bool response){

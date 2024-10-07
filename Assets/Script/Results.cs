@@ -37,30 +37,24 @@ public class Results : MonoBehaviour
         UIResult.SetActive(true);
 
         if(fails==0){
-            Debug.Log("Notre Roi a pû fêter son anniversaire sans aucun problème. Bon travail.");
-            _txt.text = "Notre Roi a pû fêter son anniversaire sans aucun problème. Bon travail.";
+            Debug.Log("Our king held a magnificent feast, and all was well, thanks to you.");
+            _txt.text = "Our king held a magnificent feast, and all was well, thanks to you.";
         } 
         else if (success ==0){
-            Debug.Log("Par vos actions, le Roi a été assassiné. Vous êtes viré et condamné à mort.");
-            _txt.text = "Par vos actions, le Roi a été assassiné. Vous êtes viré et condamné à mort.";
+            Debug.Log("By your actions, our liege died in the hands of an assassin, you will be strung like cheese and hung.");
+            _txt.text = "By your actions, our liege died in the hands of an assassin, you will be strung like cheese and hung.";
         } 
         else if(success > fails){
-            Debug.Log("Une tentative d’empoisonnement à été déjouée grâce à nos agents. Nous vous avons à l'œil.");
-            _txt.text= "Une tentative d’empoisonnement à été déjouée grâce à nos agents. Nous vous avons à l'œil.";
+            Debug.Log("An assassin attempted to sneak poison to our Lords meal, but was caught in the act. We have our eye on you.");
+            _txt.text= "An assassin attempted to sneak poison to our Lords meal, but was caught in the act. We have our eye on you.";
         }
         else if(fails > success){
-            Debug.Log("Beaucoup de sachets de drogues ont été mis dans la nourriture de notre très cher Roi. Celui-ci à succombé. J’espère que vous êtes fier de vous.");
-            _txt.text = "Beaucoup de sachets de drogues ont été mis dans la nourriture de notre très cher Roi. Celui-ci à succombé. J’espère que vous êtes fier de vous.";
+            Debug.Log("Our Lord has succumbed to food poisoning, oh the tragedy! This is all your doing...!");
+            _txt.text = "Our Lord has succumbed to food poisoning, oh the tragedy! This is all your doing...!";
         }
         else{
-            Debug.Log("autant");
-            _txt.text = "autant";
+            Debug.Log("It would seem a balance was made.");
+            _txt.text = "It would seem a balance was made.";
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -25,6 +25,7 @@ public class RoundManager : MonoBehaviour
     [Header("Scripts")]
     [SerializeField] private Temperature _temperatureScript;
     [SerializeField] private Offrandes _offrandesScript;
+    [SerializeField] private List<Cordes> _ropesList= new List<Cordes>();
 
     [Header("Passenger Stuff")]
     [SerializeField] GameObject passport;
@@ -36,13 +37,13 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private Vector3 imageOffset = new Vector3(20f, 0f, 0f);
     [SerializeField] private float fadeDuration = 2.0f;
     [SerializeField] private float delayBeforeFade = 0.5f;
+    public bool isAccepted;
 
     private Vector3 originalPosition;
     private Color originalColor;
 
     void Start()
     {
-        // Initialize singleton instance
         if (instance != null)
         {
             Destroy(instance);
@@ -56,6 +57,8 @@ public class RoundManager : MonoBehaviour
         originalColor = passengerImage.color;
 
         StartNewRound();
+        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
+        _temperatureScript.GetFourRandomInterdictions(); //Generate new interdictions
     }
 
     void StartNewRound()
@@ -100,9 +103,11 @@ public class RoundManager : MonoBehaviour
         //Reset game
         PassengerInfoController.instance.UpdatePassengerInfo(currentPassenger);
         _temperatureScript.GenerateResults(); //Générer une nouvelle température (gift) par nv pers
-        _offrandesScript.GenerateForbiddenGift(); //Generate new gift
+        foreach(var rope in  _ropesList){
+            rope.Invoke("ResetRope",1f); //reset l etat des cordes
+        }
 
-        if (currentPassengerIndex < passengersToDisplay.Count)
+        if (currentPassengerIndex < totalPassengersPerRound)
         {
             StartCoroutine(TransitionToNextPassenger());
         }
@@ -137,6 +142,7 @@ public class RoundManager : MonoBehaviour
 
         ActivatePassport();
         currentPassengerIndex++;
+        isAccepted = false;
     }
 
     private IEnumerator HidePassengerImageWithFade()
@@ -145,6 +151,7 @@ public class RoundManager : MonoBehaviour
 
         Vector3 currentPosition = passengerImage.transform.localPosition;
         Vector3 targetPosition = originalPosition;
+        Vector3 targetPositionAccepted = originalPosition + (imageOffset * 2);
 
         Color currentColor = passengerImage.color;
         Color targetColor = Color.black;
@@ -156,7 +163,15 @@ public class RoundManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = Mathf.Clamp01(elapsedTime / fadeDuration);
 
-            passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, t);
+            if (!isAccepted)
+            {
+                passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPosition, t);
+
+            } else {
+
+                passengerImage.transform.localPosition = Vector3.Lerp(currentPosition, targetPositionAccepted, t);
+            }
+
 
             passengerImage.color = Color.Lerp(currentColor, targetColor, t);
 
