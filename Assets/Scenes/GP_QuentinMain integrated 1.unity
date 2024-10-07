@@ -4358,12 +4358,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 766884355}
     m_Modifications:
     - target: {fileID: 468213753695189452, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 59.295
+      objectReference: {fileID: 0}
+    - target: {fileID: 468213753695189452, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 481.3
       objectReference: {fileID: 0}
     - target: {fileID: 468213753695189452, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126
+      value: 127.66
       objectReference: {fileID: 0}
     - target: {fileID: 2684348745276514251, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_text
@@ -4371,11 +4375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3258117019120478363, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_text
-      value: 'Step 3 : Check that the temperature is between 25 and 50 degrees Celsius.'
+      value: 'Step 3 : Check that you have not reached a forbidden temperature'
       objectReference: {fileID: 0}
     - target: {fileID: 3258117019120478363, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_fontSize
-      value: 20.2
+      value: 23.25
       objectReference: {fileID: 0}
     - target: {fileID: 3271509796414599861, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_Name
@@ -4495,7 +4499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194456233178356453, guid: 73ce26b95bcdc05459e9abc38016946a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 52
+      value: 57
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4759,7 +4763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 521066591039100115, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 648529860146142636, guid: c2f9a389c4097044ca4e74a0112a3acd, type: 3}
       propertyPath: m_Sprite
@@ -5366,7 +5370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972086140690049722, guid: 0dc65d0154505d84fa405824e505643c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6041101704133023730, guid: 0dc65d0154505d84fa405824e505643c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
