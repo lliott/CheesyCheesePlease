@@ -8,12 +8,22 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
     [SerializeField] private float _displayTime;
     private float _remainingTime ;
     private bool _isDisplaying = false;
+    private AudioSource _audio;
 
     void Awake()
     {
         objectToDisplay.SetActive(false); 
         ResetDialogue() ;
-    }   
+        
+    }  
+
+    void Start() {
+        if(gameObject.GetComponent<AudioSource>() != null)
+        {
+            _audio = GetComponent<AudioSource>();
+            //_audio.enabled = false;
+        }
+    }
 
     void Update(){
         if(_displayTime != 0){
@@ -44,6 +54,9 @@ public class ClickableObject : MonoBehaviour, IPointerClickHandler
         if (!objectToDisplay.activeSelf)
         {
             objectToDisplay.SetActive(true);
+            if(_audio!=null){
+                _audio.Play();
+            }
         }
 
         
