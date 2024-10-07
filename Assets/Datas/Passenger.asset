@@ -16,77 +16,120 @@ MonoBehaviour:
   - name: Jerry
     passportSettings:
       photo: {fileID: 0}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: f04e4dcae94868049bc3e19baead6138, type: 3}
-    gift: {fileID: 21300000, guid: 452de0513c5dbce4bad3c7cdb6ee61c4, type: 3}
+    gift: 0
     passengerType: 0
+    dialogue: 
   - name: Tom
     passportSettings:
       photo: {fileID: 21300000, guid: 940ef25b4013638419c3a695f14ad673, type: 3}
-      caption: a cat?
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: 983a4e0cde819984f9581ea7f0cb5fa6, type: 3}
-    gift: {fileID: 21300000, guid: 1267bd4d09bfcc749b8b0cbf00658236, type: 3}
+    gift: 0
     passengerType: 1
+    dialogue: 
   - name: Tam
     passportSettings:
       photo: {fileID: 0}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: 537393110692bf74498be126addf7e56, type: 3}
-    gift: {fileID: 21300000, guid: f2fc6a766618ca749ab88278a9f19b34, type: 3}
+    gift: 0
     passengerType: 2
+    dialogue: 
   - name: Rodrigo
     passportSettings:
       photo: {fileID: 21300000, guid: 55f86382479eb7a45846b5daed5be5e7, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: 6f11ee111a5280547bc15f40c64a47d3, type: 3}
-    gift: {fileID: 21300000, guid: c02a1a84949e57b4ab9f5ed3435c8953, type: 3}
+    gift: 0
     passengerType: 2
+    dialogue: 
   - name: Opera
     passportSettings:
       photo: {fileID: 0}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: cd1f8bd7182fe4a4dac166eb328c106a, type: 3}
-    gift: {fileID: 21300000, guid: 452de0513c5dbce4bad3c7cdb6ee61c4, type: 3}
+    gift: 0
     passengerType: 1
+    dialogue: 
   - name: Emile
     passportSettings:
       photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: ec5edff120a4c9f4c965f3f09b56111d, type: 3}
-    gift: {fileID: 21300000, guid: f2fc6a766618ca749ab88278a9f19b34, type: 3}
+    gift: 0
     passengerType: 1
+    dialogue: 
   - name: Mc Kibble
     passportSettings:
       photo: {fileID: 0}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: d81806825cda6204a9d950b302092249, type: 3}
-    gift: {fileID: 21300000, guid: f2fc6a766618ca749ab88278a9f19b34, type: 3}
+    gift: 0
     passengerType: 1
+    dialogue: 
   - name: Jean
     passportSettings:
       photo: {fileID: 21300000, guid: 18c2eace3a8f6f64e8bfcd373a712ca4, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: 10e7a936e081b114d909ae6bac2a0b92, type: 3}
-    gift: {fileID: 21300000, guid: f2fc6a766618ca749ab88278a9f19b34, type: 3}
+    gift: 0
     passengerType: 1
+    dialogue: 
   - name: Opal
     passportSettings:
       photo: {fileID: 21300000, guid: 184570fc956f0b34f93e55371feeb27e, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: be02bb97c602f53428227aa7866a6add, type: 3}
-    gift: {fileID: 21300000, guid: c02a1a84949e57b4ab9f5ed3435c8953, type: 3}
+    gift: 0
     passengerType: 0
+    dialogue: 
   - name: Bruno
     passportSettings:
       photo: {fileID: 21300000, guid: 55f86382479eb7a45846b5daed5be5e7, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: 6f11ee111a5280547bc15f40c64a47d3, type: 3}
-    gift: {fileID: 21300000, guid: 1760f2d0b9f294b4589da910ecdd6850, type: 3}
+    gift: 0
     passengerType: 2
+    dialogue: 
   - name: Jules
     passportSettings:
       photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
-      caption: 
+      species: 
+      pelage: 
+      birth: 
     skin: {fileID: 21300000, guid: ec5edff120a4c9f4c965f3f09b56111d, type: 3}
-    gift: {fileID: 21300000, guid: 1760f2d0b9f294b4589da910ecdd6850, type: 3}
+    gift: 0
     passengerType: 2
+    dialogue: 
+  - name: Jules
+    passportSettings:
+      photo: {fileID: 21300000, guid: 77d136d68087aec4197e0d58c72c11b6, type: 3}
+      species: 
+      pelage: 
+      birth: 
+    skin: {fileID: 21300000, guid: ec5edff120a4c9f4c965f3f09b56111d, type: 3}
+    gift: 0
+    passengerType: 2
+    dialogue: 
