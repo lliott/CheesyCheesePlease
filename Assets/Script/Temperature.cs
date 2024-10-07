@@ -74,7 +74,7 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
         if(chance<=2){                   // = 2/10 chances
             available = false;
         }
-        randomDegree = Random.Range(5,81);
+        randomDegree = Random.Range(25,51);
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -103,16 +103,17 @@ public class Temperature : MonoBehaviour, IPointerClickHandler
     }
     public void GenerateRandomInterdictions(){
         int a;
-        bool firstRange = Random.value < 0.5f; // 50% chance pr chq plage de valeurs
+        //bool firstRange = Random.value < 0.5f; // 50% chance pr chq plage de valeurs
 
-        if (firstRange)
-        {
-            a = Random.Range(5, 25);      
-        }
-        else
-        {
-            a = Random.Range(51, 81);
-        }
+        // if (firstRange)
+        // {
+        //     a = Random.Range(5, 25);      
+        // }
+        // else
+        // {
+        //     a = Random.Range(51, 81);
+        // }
+        a = Random.Range(25,51);
         
         //Check si y a pas de doublons
         if(randomInterdictions.Count != 0){  
